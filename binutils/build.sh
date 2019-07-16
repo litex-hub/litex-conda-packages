@@ -74,6 +74,8 @@ cd build
   \
   --prefix=/ \
   \
+  --enable-shared \
+  \
   --disable-nls \
   --disable-werror \
   --enable-deterministic-archives \
