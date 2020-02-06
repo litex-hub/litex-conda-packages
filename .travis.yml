@@ -16,8 +16,6 @@ stages:
   - "Other tools"
   - "Programming tools"
   - "Miscellaneus"
-  - "EDA Tools - bitstream"
-  - "Eda tools"
 
 jobs:
   include:
@@ -35,7 +33,7 @@ jobs:
      - PACKAGE=lib/usb
 #  - stage: "Libraries"
 #     os: linux
-     dist: xenial
+#     dist: xenial
 #     env:
 #     - PACKAGE=lib/ftdi
    # OSX
@@ -345,115 +343,7 @@ jobs:
      osx_image: xcode8.3
      env:
      - PACKAGE=misc/flterm
- # EDA Tools - Bitstream Tools
-   # Linux
-   - stage: "EDA Tools - bitstream"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=eda/bit/icestorm
-   - stage: "EDA Tools - bitstream"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=eda/bit/prjtrellis
-   # Windows
-   - stage: "EDA Tools"
-     os: windows
-     env:
-     - PACKAGE=eda/bit/icestorm
-   - stage: "EDA Tools"
-     os: windows
-     env:
-     - PACKAGE=eda/bit/prjtrellis
-   # OSX
-   - stage: "EDA Tools"
-     os: osx
-     osx_image: xcode8.3
-     env:
-     - PACKAGE=eda/bit/icestorm
- # EDA Tools - Synthesis
-   # Linux
-   - stage: "EDA Tools"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=eda/syn/yosys
-   # Windows
-   - stage: "EDA Tools"
-     os: windows
-     env:
-     - PACKAGE=eda/syn/yosys
-   # OSX
-   - stage: "EDA Tools"
-     os: osx
-     osx_image: xcode8.3
-     env:
-     - PACKAGE=eda/syn/yosys EXTRA_BUILD_ARGS="--no-test"
- # EDA Tools - Place and Route
-   # Linux
-   - stage: "EDA Tools"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=eda/pnr/arachne
-   - stage: "EDA Tools"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=eda/pnr/nextpnr/ice40
-   - stage: "EDA Tools"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=eda/pnr/nextpnr/ecp5
-   - stage: "EDA Tools"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=eda/pnr/nextpnr/generic
-#  - stage: "EDA Tools"
-#    os: linux
-#    dist: xenial
-#    env:
-#    - PACKAGE=eda/pnr/vtr                 CONDA_CHANNELS=conda-forge
-   # Windows
-   - stage: "EDA Tools"
-     os: windows
-     env:
-     - PACKAGE=eda/pnr/nextpnr/ice40
-   # OSX
-   - stage: "EDA Tools"
-     os: osx
-     osx_image: xcode8.3
-     env:
-     - PACKAGE=eda/pnr/nextpnr/ice40
- # EDA Tools - Simulation
-   # Linux
-   - stage: "EDA Tools"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=eda/sim/icarus
-   - stage: "EDA Tools"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=eda/sim/verilator
-   # Windows
-   - stage: "EDA Tools"
-     os: windows
-     env:
-     - PACKAGE=eda/sim/icarus
-   # OSX
-   - stage: "EDA Tools"
-     os: osx
-     osx_image: xcode8.3
-     env:
-     - PACKAGE=eda/sim/icarus
 
-  allow_failures:
-   - env: PACKAGE=vtr CONDA_CHANNELS=conda-forge
   fast_finish: true
 
 before_install:

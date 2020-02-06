@@ -1,0 +1,3 @@
+[submodule "eda"]
+	path = eda
+	url = https://github.com/litex-hub/litex-conda-eda
