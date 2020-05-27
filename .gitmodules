@@ -1,3 +1,6 @@
+[submodule "compilers"]
+	path = compilers
+	url = https://github.com/litex-hub/litex-conda-compilers
 [submodule "eda"]
 	path = eda
 	url = https://github.com/litex-hub/litex-conda-eda
