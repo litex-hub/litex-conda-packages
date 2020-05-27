@@ -260,16 +260,6 @@ jobs:
      dist: xenial
      env:
      - PACKAGE=sdcc
-   - stage: "Other Tools"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=sigrok-cli                 CONDA_CHANNELS=conda-forge
-   - stage: "Other Tools"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=dtc
    # OSX
    - stage: "Other Tools"
      os: osx
