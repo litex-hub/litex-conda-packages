@@ -15,7 +15,6 @@ stages:
   - "Toolchain - linux musl"
   - "Other tools"
   - "Programming tools"
-  - "Miscellaneus"
 
 jobs:
   include:
@@ -261,16 +260,6 @@ jobs:
      dist: xenial
      env:
      - PACKAGE=sdcc
-   - stage: "Other Tools"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=sigrok-cli                 CONDA_CHANNELS=conda-forge
-   - stage: "Other Tools"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=dtc
    # OSX
    - stage: "Other Tools"
      os: osx
@@ -304,6 +293,11 @@ jobs:
      dist: xenial
      env:
      - PACKAGE=prog/dfu-util
+   - stage: "Programming Tools"
+     os: linux
+     dist: xenial
+     env:
+     - PACKAGE=prog/flterm
    # Windows
    - stage: "Programming Tools"
      os: windows
@@ -330,19 +324,11 @@ jobs:
      osx_image: xcode8.3
      env:
      - PACKAGE=prog/openocd
- # Miscellaneus
-   # Linux
-   - stage: "Miscellaneus"
-     os: linux
-     dist: xenial
-     env:
-     - PACKAGE=misc/flterm
-   # OSX
-   - stage: "Miscellaneus"
+   - stage: "Programming Tools"
      os: osx
      osx_image: xcode8.3
      env:
-     - PACKAGE=misc/flterm
+     - PACKAGE=prog/flterm
 
   fast_finish: true
 
