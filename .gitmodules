@@ -7,3 +7,6 @@
 [submodule "misc"]
 	path = misc
 	url = https://github.com/litex-hub/litex-conda-misc
+[submodule "prog"]
+	path = prog
+	url = https://github.com/litex-hub/litex-conda-prog
